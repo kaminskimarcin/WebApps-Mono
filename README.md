@@ -64,31 +64,8 @@ Zdecydowałem się na popularny obecnie i estetyczny **Glassmorphism** w trybie 
 * **Bezstanowe JWT (Stateless Token Authentication):** Sesje nie są trzymane w pamięci serwera. Każdy request jest na żywo sprawdzany przez `FirebaseTokenFilter` sprawdzający integralność kryptograficzną dostarczonego przez klienta Bearer Tokena.
 * **Reguły Firestore:** Serwer Java operuje na kluczach serwisowych (Admin SDK), przez co klienci z zewnątrz (np. ze spreparowanego kodu JS) nie mają bezpośredniego dostępu do bazy. Cały ruch idzie przez nasze ściśle obwarowane API.
 * **CORS:** Skonfigurowano polityki CORS dla endpointów w taki sposób, aby zapobiegać nadużyciom z nieznanych domen w środowisku deweloperskim i produkcyjnym.
-
-## 8. Testowanie
-Przeprowadzono gruntowne testy End-To-End (E2E) badające ciągi zachowań z perspektywy ostatecznego użytkownika (przejście od stworzenia konta aż po utworzenie zadań).
-
-**Wykryte i naprawione błędy (Bugfixy):**
-- *Błąd:* Na liście rozwijanej widniał jedynie tekst "Nieprzypisane", ponieważ klient gubił kontekst żądania przy uszkodzonym pliku konfiguracyjnym API.
-  *Fix:* Naprawa rutingu API i wymuszenie cichego odświeżania tokena w funkcjach `fetchWithAuth`.
-- *Błąd:* Nieczytelne komunikaty przy nieprawidłowym dołączeniu do grupy.
-  *Fix:* Dodanie przechwytywania wyjątków i alertów (lub haptic-feedback w wersji mobile), informujących że kod grupy (ID) jest błędny.
-- *Błąd:* Zmiany statusu zadania (drag & drop) rzadko zawieszały UI przeglądarki na moment, aż serwer odpowie.
-  *Fix:* Optymistyczne aktualizacje UI (Optimistic UI update) - przesunięcie zadania na widoku odbywa się natychmiastowo z poziomu stanu React, a żądanie do bazy leci asynchronicznie w tle.
-
+* 
 ## 9. Zrzuty ekranu
-
-*(Dodaj poniżej odpowiednie pliki graficzne na swoim repozytorium do katalogu, np. `/screenshots/`)*
-
-> **PWA (Frontend)**
-> 
-> ![PWA Dashboard](./screenshots/pwa-dashboard.png)
-> ![PWA Board](./screenshots/pwa-board.png)
-
-> **Mobile (Aplikacja natywna)**
-> 
-> ![Mobile Home](./screenshots/mobile-teams.png)
-> ![Mobile Task Modal](./screenshots/mobile-task.png)
 
 ## 10. Instrukcja uruchomienia
 

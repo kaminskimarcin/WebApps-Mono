@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: taskboard-backend
+
+server:
+  port: 8080
+
+firebase:
+  # Tutaj ustawimy ścieżkę do pliku z kluczem weryfikującym Firebase Admin, 
+  # domyślnie możemy użyć zmiennej środowiskowej FIREBASE_CREDENTIALS,
+  # jeśli jej nie ma, spróbuje załadować "firebase-service-account.json" z resources
+  credential-path: ${FIREBASE_CREDENTIALS:file:firebase-service-account.json}
+
+logging:
+  level:
+    com.taskboard.backend: DEBUG

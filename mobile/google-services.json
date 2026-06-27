@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "905816275862",
+    "project_id": "webapps-studia",
+    "storage_bucket": "webapps-studia.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:905816275862:android:abf2f9a4d7cf443cd03bb7",
+        "android_client_info": {
+          "package_name": "com.webapps.board"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "905816275862-5jllsc4h31m287vrr1e71pmv725ltgpf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.webapps.board",
+            "certificate_hash": "0f8bbff327ffad3b99fd64c8441b1c834efd52d2"
+          }
+        },
+        {
+          "client_id": "905816275862-avrbq5nmtgd5njjc0k47gj52gf4ceujo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzvW3ICmzfiVsY3-yVXJNGo4ZjAG6kEFg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "905816275862-avrbq5nmtgd5njjc0k47gj52gf4ceujo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -67,6 +67,25 @@ Zdecydowałem się na popularny obecnie i estetyczny **Glassmorphism** w trybie 
 * 
 ## 9. Zrzuty ekranu
 
+### Aplikacja Webowa (PWA)
+![PWA Zrzut 1](image.png)
+![PWA Zrzut 2](image-1.png)
+![PWA Zrzut 3](image-2.png)
+![PWA Zrzut 4](image-3.png)
+![PWA Zrzut 5](image-4.png)
+![PWA Zrzut 6](image-5.png)
+![PWA Zrzut 7](image-6.png)
+![PWA Zrzut 8](image-7.png)
+
+### Aplikacja Mobilna (React Native / Expo)
+![Mobile Zrzut 1](Screenshot_20260627-143141.png)
+![Mobile Zrzut 2](Screenshot_20260627-151403.png)
+![Mobile Zrzut 3](Screenshot_20260627-151406.png)
+![Mobile Zrzut 4](Screenshot_20260627-151603.png)
+![Mobile Zrzut 5](Screenshot_20260627-151609.png)
+![Mobile Zrzut 6](Screenshot_20260627-151611.png)
+![Mobile Zrzut 7](Screenshot_20260627-151614.png)
+![Mobile Zrzut 8](Screenshot_20260627-151619.png)
 ## 10. Instrukcja uruchomienia
 
 ### Krok 1: Backend (Java/Spring Boot)

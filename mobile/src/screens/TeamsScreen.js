@@ -64,9 +64,6 @@ export default function TeamsScreen({ navigation }) {
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.headerTitle}>Twoje Zespoły</Text>
-        <TouchableOpacity onPress={() => auth.signOut()} style={styles.logoutBtn}>
-          <Text style={{ color: '#ef4444', fontWeight: 'bold' }}>Wyloguj</Text>
-        </TouchableOpacity>
       </View>
 
       <FlatList 

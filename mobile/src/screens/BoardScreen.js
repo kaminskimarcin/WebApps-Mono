@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, ScrollView, TextInput, Modal, Alert } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, ScrollView, TextInput, Modal, Alert, Dimensions } from 'react-native';
 import { api } from '../services/api';
 import * as Haptics from 'expo-haptics';
 
@@ -13,6 +13,9 @@ export default function BoardScreen({ route }) {
   const [selectedTask, setSelectedTask] = useState(null);
   const [teamMembers, setTeamMembers] = useState([]);
 
+  const { width } = Dimensions.get('window');
+  const columnWidth = width;
+  
   const priorities = ['LOW', 'MEDIUM', 'HIGH'];
 
   const loadTasksAndMembers = async () => {
@@ -80,9 +83,10 @@ export default function BoardScreen({ route }) {
   const renderColumn = (status, title) => {
     const colTasks = tasks.filter(t => t.status === status);
     return (
-      <View style={styles.column}>
-        <Text style={styles.colHeader}>{title} ({colTasks.length})</Text>
-        <ScrollView style={{ flex: 1 }}>
+      <View style={[styles.column, { width: columnWidth }]}>
+        <View style={styles.columnInner}>
+          <Text style={styles.colHeader}>{title} ({colTasks.length})</Text>
+          <ScrollView style={{ flex: 1 }}>
           {colTasks.map(task => (
             <TouchableOpacity key={task.id} style={styles.taskCard} onPress={() => { Haptics.selectionAsync(); setSelectedTask({ ...task }); }}>
               <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
@@ -109,7 +113,8 @@ export default function BoardScreen({ route }) {
               </View>
             </TouchableOpacity>
           ))}
-        </ScrollView>
+          </ScrollView>
+        </View>
       </View>
     );
   };
@@ -194,7 +199,8 @@ const styles = StyleSheet.create({
   btn: { backgroundColor: '#3b82f6', padding: 12, borderRadius: 8, justifyContent: 'center', alignItems: 'center' },
   btnText: { color: '#fff', fontWeight: 'bold' },
   
-  column: { width: 320, padding: 15, marginHorizontal: 10, marginTop: 10, backgroundColor: 'rgba(15, 23, 42, 0.4)', borderRadius: 12, borderWidth: 1, borderColor: 'rgba(255,255,255,0.05)' },
+  column: { paddingHorizontal: 10, marginTop: 10 },
+  columnInner: { flex: 1, backgroundColor: 'rgba(15, 23, 42, 0.4)', borderRadius: 12, borderWidth: 1, borderColor: 'rgba(255,255,255,0.05)', padding: 15 },
   colHeader: { color: '#fff', fontSize: 18, fontWeight: 'bold', marginBottom: 15 },
   taskCard: { backgroundColor: 'rgba(30, 41, 59, 0.8)', padding: 15, borderRadius: 10, marginBottom: 10, borderWidth: 1, borderColor: 'rgba(255,255,255,0.1)' },
   taskTitle: { color: '#fff', fontSize: 16, marginBottom: 5, flex: 1 },

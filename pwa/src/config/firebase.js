@@ -8,8 +8,8 @@ const firebaseConfig = {
   projectId: "webapps-studia",
   storageBucket: "webapps-studia.firebasestorage.app",
   messagingSenderId: "905816275862",
-  appId: "1:905816275862:web:8893a00dce02ecf6d03bb7",
-  measurementId: "G-767HHGYM71"
+  appId: "1:905816275862:web:21744cd5a9b8c447d03bb7",
+  measurementId: "G-YWEFV7K1H2"
 };
 
 // Inicjalizacja Firebase
